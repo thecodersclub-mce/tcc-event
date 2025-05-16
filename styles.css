@@ -103,3 +103,4 @@ footer {
     position: fixed;
     bottom: 0;
 }
+@media only screen and (max-width: 480px) { body { font-size: 14px; /* Slightly reduce font size for compact readability */ } .favicon-logo { width: 30px; /* Further reduce logo size */ } .college-name { font-size: 16px; /* Slightly smaller college name */ } .site-title { font-size: 14px; /* Slightly smaller club name */ } .label-button-container h3 { font-size: 14px; /* Reduced heading size */ padding: 6px 10px; /* Reduced padding */ } button { font-size: 12px; /* Reduced button text size */ padding: 8px 12px; /* Adjust button padding */ } .button-row { gap: 15px; /* Reduced spacing between buttons */ } }
