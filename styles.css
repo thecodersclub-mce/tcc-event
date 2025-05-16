@@ -3,11 +3,15 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers content vertically */
     background-color: #f8f8f8;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     color: #333;
     box-sizing: border-box;
-    text-align: center; /* Centers text content */
+    text-align: center;
 }
 
 /* Header */
@@ -50,10 +54,19 @@ html, body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Button Section */
+/* Centering Content */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers both vertically and horizontally */
+    height: 70vh; /* Ensures buttons appear in the center */
+}
+
+/* Buttons */
 .button-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stack buttons vertically */
     gap: 20px;
     margin-top: 20px;
 }
@@ -62,12 +75,13 @@ button {
     background-color: #00408f;
     color: white;
     border: none;
-    padding: 12px 18px;
+    padding: 14px 20px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 200px; /* Ensures buttons are evenly sized */
 }
 
 button:hover {
