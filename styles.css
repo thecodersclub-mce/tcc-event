@@ -1,15 +1,16 @@
+/* General Styles */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     background-color: #f8f8f8;
-    overflow-x: hidden;
-    overflow-y: auto;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     color: #333;
     box-sizing: border-box;
+    text-align: center; /* Centers text content */
 }
 
+/* Header */
 .blue-container {
     width: 100%;
     background-color: #00408f;
@@ -49,38 +50,21 @@ html, body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.label-button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-}
-
-.label-button-container h3 {
-    background-color: #e3f2fd;
-    color: #00408f;
-    padding: 6px 12px; /* Reduced padding */
-    font-size: 12px; /* Reduced font size */
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 8px; /* Adjusted spacing */
-}
-
-.button-row {
+/* Button Section */
+.button-container {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 button {
     background-color: #00408f;
     color: white;
     border: none;
-    padding: 8px 10px; /* Reduced padding */
+    padding: 12px 18px;
     border-radius: 5px;
-    font-size: 12px; /* Reduced font size */
+    font-size: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -94,66 +78,14 @@ button:active {
     transform: scale(0.98);
 }
 
+/* Footer */
 footer {
     width: 100%;
     background-color: #00408f;
     color: white;
     text-align: center;
-    padding: 2px; /* Reduced padding */
-    font-size: 10px; /* Smaller font size for compactness */
+    padding: 5px;
+    font-size: 12px;
     position: fixed;
     bottom: 0;
-    left: 0;
-}
-ve styles for medium screens (Samsung phones, tablets) */
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 14px; /* Slightly larger base font size */
-    }
-    .favicon-logo {
-        width: 40px; /* Adjust logo size for better visibility */
-    }
-    .college-name {
-        font-size: 16px; /* Maintain readability for college name */
-    }
-    .site-title {
-        font-size: 14px; /* Adjust club name for readability */
-    }
-    .label-button-container h3 {
-        font-size: 16px; /* Increase heading size for readability */
-    }
-    button {
-        font-size: 12px; /* Larger button text size */
-        padding: 10px 15px; /* Increase button size */
-    }
-    .button-row {
-        gap: 15px; /* Add spacing between buttons */
-    }
-}
-
-/* Responsive styles for smaller screens (Samsung phones) */
-@media only screen and (max-width: 480px) {
-    body {
-        font-size: 14px; /* Slightly reduce font size for compact readability */
-    }
-    .favicon-logo {
-        width: 30px; /* Further reduce logo size */
-    }
-    .college-name {
-        font-size: 16px; /* Slightly smaller college name */
-    }
-    .site-title {
-        font-size: 14px; /* Slightly smaller club name */
-    }
-    .label-button-container h3 {
-        font-size: 14px; /* Reduced heading size */
-        padding: 6px 10px; /* Reduced padding */
-    }
-    button {
-        font-size: 12px; /* Reduced button text size */
-        padding: 8px 12px; /* Adjust button padding */
-    }
-    .button-row {
-        gap: 15px; /* Reduced spacing between buttons */
-    }
 }
