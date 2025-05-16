@@ -21,6 +21,16 @@ html, body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: white;
 }
+/* Centered Content */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers both vertically and horizontally */
+    height: 80vh; /* Adjusted height to avoid footer overlap */
+    width: 100%;
+    text-align: center;
+}
 
 .left-aligned {
     display: flex;
