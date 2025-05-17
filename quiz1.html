@@ -7,34 +7,54 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>The Coders Club - OOPs Quiz</h2>
-    <form id="quizForm">
 
-        <p>1. Which of the following are principles of OOP?</p>
-        <label><input type="checkbox" name="q1" value="Encapsulation"> Encapsulation</label>
-        <label><input type="checkbox" name="q1" value="Abstraction"> Abstraction</label>
-        <label><input type="checkbox" name="q1" value="Polymorphism"> Polymorphism</label>
-        <label><input type="checkbox" name="q1" value="Compilation"> Compilation</label>
+    <!-- Header -->
+    <div class="blue-container">
+        <div class="left-aligned">
+            <a href="https://mce-madurai.ac.in/" target="_blank">
+                <img src="MCE_tab.png" alt="Logo" class="favicon-logo">
+            </a>
+            <div class="titles">
+                <h1 class="college-name">Mangayarkarasi College of Engineering</h1>
+                <h2 class="site-title">The Coders Club</h2>
+            </div>
+        </div>
+    </div>
 
-        <p>2. What is true about encapsulation in Java?</p>
-        <label><input type="checkbox" name="q2" value="It binds data and methods into a single unit"> Binds data and methods</label>
-        <label><input type="checkbox" name="q2" value="It hides implementation details"> Hides implementation details</label>
-        <label><input type="checkbox" name="q2" value="It exposes internal logic"> Exposes internal logic</label>
-        <label><input type="checkbox" name="q2" value="It improves security"> Improves security</label>
+    <!-- Quiz Content -->
+    <div class="content-container">
+        <h2>The Coders Club - OOPs Quiz</h2>
 
-        <!-- Repeat for all 20 questions -->
+        <form id="quizForm" class="label-button-container">
+            <p>1. Which of the following are principles of OOP?</p>
+            <label><input type="checkbox" name="q1" value="Encapsulation"> Encapsulation</label>
+            <label><input type="checkbox" name="q1" value="Abstraction"> Abstraction</label>
+            <label><input type="checkbox" name="q1" value="Polymorphism"> Polymorphism</label>
+            <label><input type="checkbox" name="q1" value="Compilation"> Compilation</label>
 
-        <br><br>
-        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
-    </form>
+            <p>2. What is true about encapsulation in Java?</p>
+            <label><input type="checkbox" name="q2" value="It binds data and methods into a single unit"> Binds data and methods</label>
+            <label><input type="checkbox" name="q2" value="It hides implementation details"> Hides implementation details</label>
+            <label><input type="checkbox" name="q2" value="It exposes internal logic"> Exposes internal logic</label>
+            <label><input type="checkbox" name="q2" value="It improves security"> Improves security</label>
 
+            <!-- Add remaining questions here -->
+
+            <br><br>
+            <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created by The Coders Club</p>
+    </footer>
+
+    <!-- JavaScript for Quiz Submission -->
     <script>
         const correctAnswers = {
             q1: ["Encapsulation", "Abstraction", "Polymorphism"],
-            q2: ["It binds data and methods into a single unit", "It hides implementation details", "It improves security"],
-            q3: ["Method overriding", "Interfaces", "Abstract classes"],
-            q4: ["final", "private"],
-            q5: ["Constructors have the same name as the class", "Constructors can be overloaded", "Constructors are called automatically when an object is created"]
+            q2: ["It binds data and methods into a single unit", "It hides implementation details", "It improves security"]
             // Add remaining answers
         };
 
