@@ -21,36 +21,67 @@
     </div>
     <div class="content-container">
         <center><h4>QUIZTOPIA</h4></center>
+        
         <section>
             <div class="label-button-container">
                 <h3>3RD YEAR CSE DEPARTMENT</h3>
                 <div class="button-row">
-                    <button onclick="window.location.href='https://quizizz.com/join?gc=14077684';">CLICK HERE</button>
-                <br/><br/>
+                    <button class="quiz-button" disabled onclick="window.location.href='https://quizizz.com/join?gc=14077684';">CLICK HERE</button>
+                    <br/><br/>
                 </div>
             </div>
         </section>
+        
         <section>
             <div class="label-button-container">
                 <h3>2ND YEAR CSE DEPARTMENT</h3>
                 <div class="button-row">
-                    <button onclick="window.location.href='https://quizizz.com/join?gc=140011';">CLICK HERE</button>
-            <br/><br/>
+                    <button class="quiz-button" disabled onclick="window.location.href='https://quizizz.com/join?gc=140011';">CLICK HERE</button>
+                    <br/><br/>
                 </div>
             </div>
         </section>
+
         <section>
             <div class="label-button-container">
                 <h3>2ND YEAR AI/ML DEPARTMENT</h3>
                 <div class="button-row">
-                    <button onclick="window.location.href='https://quizizz.com/join?gc=23849972';">CLICK HERE</button>
-              <br/><br/>
+                    <button class="quiz-button" disabled onclick="window.location.href='https://quizizz.com/join?gc=23849972';">CLICK HERE</button>
+                    <br/><br/>
                 </div>
             </div>
         </section>
     </div>
+
     <footer>
         <p>Created by The Coders Club</p>
     </footer>
+
+    <!-- JavaScript for enabling buttons at 6:30 PM -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let quizTime = new Date();
+            quizTime.setHours(18, 30, 0); // 6:30 PM
+
+            function enableQuizLinks() {
+                let currentTime = new Date();
+                if (currentTime >= quizTime) {
+                    document.querySelectorAll(".quiz-button").forEach(button => {
+                        button.disabled = false; // Enable buttons
+                    });
+                } else {
+                    document.querySelectorAll(".quiz-button").forEach(button => {
+                        button.disabled = true; // Keep buttons disabled until 6:30 PM
+                    });
+                }
+            }
+
+            // Run the function once when the page loads
+            enableQuizLinks();
+
+            // Keep checking every minute
+            setInterval(enableQuizLinks, 60000);
+        });
+    </script>
 </body>
 </html>
