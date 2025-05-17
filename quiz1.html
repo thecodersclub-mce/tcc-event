@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - The Coders Club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>The Coders Club - OOPs Quiz</h2>
+    <form id="quizForm">
+
+        <p>1. Which of the following are principles of OOP?</p>
+        <label><input type="checkbox" name="q1" value="Encapsulation"> Encapsulation</label>
+        <label><input type="checkbox" name="q1" value="Abstraction"> Abstraction</label>
+        <label><input type="checkbox" name="q1" value="Polymorphism"> Polymorphism</label>
+        <label><input type="checkbox" name="q1" value="Compilation"> Compilation</label>
+
+        <p>2. What is true about encapsulation in Java?</p>
+        <label><input type="checkbox" name="q2" value="It binds data and methods into a single unit"> Binds data and methods</label>
+        <label><input type="checkbox" name="q2" value="It hides implementation details"> Hides implementation details</label>
+        <label><input type="checkbox" name="q2" value="It exposes internal logic"> Exposes internal logic</label>
+        <label><input type="checkbox" name="q2" value="It improves security"> Improves security</label>
+
+        <!-- Repeat for all 20 questions -->
+
+        <br><br>
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <script>
+        const correctAnswers = {
+            q1: ["Encapsulation", "Abstraction", "Polymorphism"],
+            q2: ["It binds data and methods into a single unit", "It hides implementation details", "It improves security"],
+            q3: ["Method overriding", "Interfaces", "Abstract classes"],
+            q4: ["final", "private"],
+            q5: ["Constructors have the same name as the class", "Constructors can be overloaded", "Constructors are called automatically when an object is created"]
+            // Add remaining answers
+        };
+
+        function submitQuiz() {
+            let formData = new FormData(document.getElementById("quizForm"));
+            let answers = {};
+            let incorrectAnswers = {};
+
+            for (let pair of formData.entries()) {
+                let question = pair[0];
+                let response = pair[1];
+
+                if (!answers[question]) {
+                    answers[question] = [];
+                }
+                answers[question].push(response);
+
+                if (!correctAnswers[question]?.includes(response)) {
+                    if (!incorrectAnswers[question]) {
+                        incorrectAnswers[question] = [];
+                    }
+                    incorrectAnswers[question].push(response);
+                }
+            }
+
+            fetch("https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_URL/exec", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ correctAnswers: answers, wrongAnswers: incorrectAnswers })
+            })
+            .then(response => response.text())
+            .then(() => {
+                alert("Quiz submitted successfully! Check results in the spreadsheet.");
+                window.location.href = "https://docs.google.com/spreadsheets/YOUR_SPREADSHEET_LINK";
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
