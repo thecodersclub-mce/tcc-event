@@ -6,6 +6,13 @@
     <title>Home - The Coders Club</title>
     <link rel="icon" href="TCC.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .code-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Adds space between the code and button */
+        }
+    </style>
 </head>
 <body>
 
@@ -25,9 +32,11 @@
     <div class="content-container">
         <h2>name example -> vishal/cse-3</h2>
 
-        <!-- Code and Copy Button -->
-        <pre id="auto-code">2653 2852</pre>
-        <button onclick="copyToClipboard()">Copy Code for Quiz</button>
+        <!-- Code and Copy Button in one line -->
+        <div class="code-container">
+            <pre id="auto-code">2653 2852</pre>
+            <button onclick="copyToClipboard()">Copy Code</button>
+        </div>
         
         <!-- Buttons Section -->
         <div class="button-container">
