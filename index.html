@@ -10,7 +10,17 @@
         .code-container {
             display: flex;
             align-items: center;
-            gap: 10px; /* Adds space between the code and button */
+            gap: 10px; /* Adds space between the elements */
+        }
+        pre {
+            margin: 0;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -32,8 +42,9 @@
     <div class="content-container">
         <h2>name example -> vishal/cse-3</h2>
 
-        <!-- Code and Copy Button in one line -->
+        <!-- Instruction, Code, and Copy Button in one line -->
         <div class="code-container">
+            <span>Enter code if asked:</span>
             <pre id="auto-code">2653 2852</pre>
             <button onclick="copyToClipboard()">Copy Code for Quiz</button>
         </div>
