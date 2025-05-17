@@ -20,40 +20,72 @@
         </div>
     </div>
     <div class="content-container">
-        <center><h4>FEEDBACK FORMS ARE CLOSED!</h4></center>
+        <center><h4 id="status">FEEDBACK FORM</h4></center>
+
         <section>
             <div class="label-button-container">
                 <h3>3RD YEAR CSE DEPARTMENT</h3>
                 <div class="button-row">
-                    <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScn31fnzG9mWkoCG7A2Z5VifzXMTV4klVckoax9xvKOxnGPmQ/viewform?usp=dialog';">BOYS</button>
-                    <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc-p9mPXlIImWbKJ-Ys3cL0FxEBuR5HZPPwkkaKaUOro-ExjA/viewform?usp=dialog';">GIRLS</button>
-                <br/><br/>
+                    <button class="feedback-button" disabled onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScn31fnzG9mWkoCG7A2Z5VifzXMTV4klVckoax9xvKOxnGPmQ/viewform?usp=dialog';">BOYS</button>
+                    <button class="feedback-button" disabled onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc-p9mPXlIImWbKJ-Ys3cL0FxEBuR5HZPPwkkaKaUOro-ExjA/viewform?usp=dialog';">GIRLS</button>
+                    <br/><br/>
                 </div>
             </div>
         </section>
+        
         <section>
             <div class="label-button-container">
                 <h3>2ND YEAR CSE DEPARTMENT</h3>
                 <div class="button-row">
-                    <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScbqNPC--HsUXBVslZEhbAm7g8RRFzr8DrS_L4UXlzO2loegQ/viewform?usp=dialog';">BOYS</button>
-                    <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSeMIPV_3T2nW64ij2vLj7pyq25t3qFFDekr4_Wk7o7Y4tztag/viewform?usp=dialog';">GIRLS</button>
-            <br/><br/>
+                    <button class="feedback-button" disabled onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScbqNPC--HsUXBVslZEhbAm7g8RRFzr8DrS_L4UXlzO2loegQ/viewform?usp=dialog';">BOYS</button>
+                    <button class="feedback-button" disabled onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSeMIPV_3T2nW64ij2vLj7pyq25t3qFFDekr4_Wk7o7Y4tztag/viewform?usp=dialog';">GIRLS</button>
+                    <br/><br/>
                 </div>
             </div>
         </section>
+
         <section>
             <div class="label-button-container">
                 <h3>2ND YEAR AI/ML DEPARTMENT</h3>
                 <div class="button-row">
-                    <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdsST0r_cwVULr7ed1onX027EXt_wq77Y6bZCmerSgKdVkm8A/viewform?usp=dialog';">BOYS</button>
-                    <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdM0PXmHbX3RUOD3NbZ7HmcNliPpxI0yFoZ9TuH0EBDhHOVow/viewform?usp=dialog';">GIRLS</button>
-              <br/><br/>
+                    <button class="feedback-button" disabled onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdsST0r_cwVULr7ed1onX027EXt_wq77Y6bZCmerSgKdVkm8A/viewform?usp=dialog';">BOYS</button>
+                    <button class="feedback-button" disabled onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdM0PXmHbX3RUOD3NbZ7HmcNliPpxI0yFoZ9TuH0EBDhHOVow/viewform?usp=dialog';">GIRLS</button>
+                    <br/><br/>
                 </div>
             </div>
         </section>
     </div>
+
     <footer>
         <p>Created by The Coders Club</p>
     </footer>
+
+    <!-- JavaScript to enable feedback forms at 6:30 PM today -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let enableTime = new Date();
+            enableTime.setHours(18, 30, 0); // 6:30 PM today
+
+            function enableFeedbackLinks() {
+                let currentTime = new Date();
+                if (currentTime >= enableTime) {
+                    document.querySelectorAll(".feedback-button").forEach(button => {
+                        button.disabled = false; // Enable buttons
+                    });
+                    document.getElementById("status").innerText = "FEEDBACK FORMS ARE OPEN!";
+                } else {
+                    document.querySelectorAll(".feedback-button").forEach(button => {
+                        button.disabled = true; // Keep buttons disabled until 6:30 PM
+                    });
+                }
+            }
+
+            // Run the function once when the page loads
+            enableFeedbackLinks();
+
+            // Check every minute to ensure accuracy
+            setInterval(enableFeedbackLinks, 60000);
+        });
+    </script>
 </body>
 </html>
