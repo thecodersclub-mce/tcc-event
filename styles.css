@@ -123,13 +123,11 @@ footer {
     left: 0;
 }
 .instagram-logo {
-    width: 24px; /* Reduced size */
+    width: 24px; /* Adjust size */
     height: 24px;
-    position: relative;
-    margin-left: 10px; /* Keeps it aligned but not too far left */
-    vertical-align: middle; /* Aligns it properly within the container */
+    margin-left: 10px; /* Adds slight spacing */
+    vertical-align: middle;
 }
-
 
 /* Responsive styles for medium screens (Samsung phones, tablets) */
 @media only screen and (max-width: 768px) {
