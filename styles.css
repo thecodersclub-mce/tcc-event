@@ -109,25 +109,29 @@ button:hover {
 button:active {
     transform: scale(0.98);
 }
-
 /* Footer */
 footer {
     width: 100%;
     background-color: #00408f;
     color: white;
     text-align: center;
-    padding: 2px;
-    font-size: 10px;
+    padding: 10px 0; /* Adds vertical padding for better spacing */
+    font-size: 12px;
     position: fixed;
     bottom: 0;
     left: 0;
+    display: flex;
+    flex-direction: column; /* Aligns items in a vertical stack */
+    align-items: center; /* Centers items horizontally */
 }
+
+/* Instagram Logo */
 .instagram-logo {
     width: 24px; /* Adjust size */
     height: 24px;
-    margin-left: 10px; /* Adds slight spacing */
-    vertical-align: middle;
+    margin-top: 5px; /* Adds gap between footer text and logo */
 }
+
 
 /* Responsive styles for medium screens (Samsung phones, tablets) */
 @media only screen and (max-width: 768px) {
