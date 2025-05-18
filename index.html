@@ -22,14 +22,6 @@
             padding: 5px 10px;
             cursor: pointer;
         }
-        .instagram-logo {
-            width: 24px; /* Adjusted size */
-            height: 24px;
-            position: fixed; /* Keeps it fixed on the right side */
-            right: 20px; /* Positions it at the right edge */
-            top: 50%; /* Centers vertically */
-            transform: translateY(-50%);
-        }
     </style>
 </head>
 <body>
@@ -66,11 +58,13 @@
             <button onclick="window.location.href='feedback.html';">Feedback Form</button>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>Created by The Coders Club</p>
-    </footer>
+<footer>
+    <p>Created by The Coders Club</p>
+    <!-- Instagram Icon in Footer -->
+    <a href="https://www.instagram.com/the_mce.coders_club/" target="_blank">
+        <img src="images.png" alt="Instagram" class="instagram-logo">
+    </a>
+</footer>
 
     <script>
         function copyToClipboard() {
