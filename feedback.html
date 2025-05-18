@@ -30,17 +30,6 @@
 
         <section>
             <div class="label-button-container">
-                <h3>3RD YEAR CSE DEPARTMENT</h3>
-                <div class="button-row">
-                    <button class="feedback-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScn31fnzG9mWkoCG7A2Z5VifzXMTV4klVckoax9xvKOxnGPmQ/viewform?usp=dialog';">BOYS</button>
-                    <button class="feedback-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc-p9mPXlIImWbKJ-Ys3cL0FxEBuR5HZPPwkkaKaUOro-ExjA/viewform?usp=dialog';">GIRLS</button>
-                    <br/><br/>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <div class="label-button-container">
                 <h3>2ND YEAR CSE DEPARTMENT</h3>
                 <div class="button-row">
                     <button class="feedback-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScbqNPC--HsUXBVslZEhbAm7g8RRFzr8DrS_L4UXlzO2loegQ/viewform?usp=dialog';">BOYS</button>
@@ -60,20 +49,21 @@
                 </div>
             </div>
         </section>
+        
+        <section>
+            <div class="label-button-container">
+                <h3>3RD YEAR CSE DEPARTMENT</h3>
+                <div class="button-row">
+                    <button class="feedback-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScn31fnzG9mWkoCG7A2Z5VifzXMTV4klVckoax9xvKOxnGPmQ/viewform?usp=dialog';">BOYS</button>
+                    <button class="feedback-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc-p9mPXlIImWbKJ-Ys3cL0FxEBuR5HZPPwkkaKaUOro-ExjA/viewform?usp=dialog';">GIRLS</button>
+                    <br/><br/>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer>
         <p>Created by The Coders Club</p>
     </footer>
-
-    <!-- JavaScript to permanently enable all feedback buttons -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".feedback-button").forEach(button => {
-                button.disabled = false; // Enable all buttons permanently
-            });
-            document.getElementById("status").innerText = "FEEDBACK FORMS ARE OPEN!";
-        });
-    </script>
 </body>
 </html>
