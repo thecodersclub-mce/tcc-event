@@ -23,10 +23,12 @@
             cursor: pointer;
         }
         .instagram-logo {
-            width: 24px; /* Reduced size */
+            width: 24px; /* Adjusted size */
             height: 24px;
-            margin-left: 15px; /* Positions it within the favicon container */
-            vertical-align: middle;
+            position: fixed; /* Keeps it fixed on the right side */
+            right: 20px; /* Positions it at the right edge */
+            top: 50%; /* Centers vertically */
+            transform: translateY(-50%);
         }
     </style>
 </head>
