@@ -122,6 +122,13 @@ footer {
     bottom: 0;
     left: 0;
 }
+.instagram-logo {
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
+    position: absolute;
+    right: 10px; /* Positions it to the right */
+    top: 10px; /* Adjust based on your layout */
+}
 
 /* Responsive styles for medium screens (Samsung phones, tablets) */
 @media only screen and (max-width: 768px) {
