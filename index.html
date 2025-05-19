@@ -7,21 +7,72 @@
     <link rel="icon" href="TCC.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .code-container {
-            display: flex;
-            align-items: center;
-            gap: 10px; /* Adds space between the elements */
-        }
-        pre {
-            margin: 0;
-            padding: 5px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
-        button {
-            padding: 5px 10px;
-            cursor: pointer;
-        }
+        .leaderboard-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 3px solid #007bff;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 400px; /* Restricts height and enables scrolling */
+    overflow-y: auto; /* Enables scrolling for large tables */
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #007bff; /* Matches table header */
+    padding: 10px;
+}
+
+.tab-button {
+    padding: 12px;
+    cursor: pointer;
+    border: 1px solid #ddd; /* Matches table cell borders */
+    background-color: #007bff; /* Matches table header */
+    color: white;
+    font-weight: bold;
+    margin: 5px;
+    text-align: center;
+    width: 150px; /* Keeps the size balanced */
+}
+
+.tab-button:hover {
+    background-color: #0056b3; /* Slight hover effect */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .leaderboard-container {
+        max-height: 300px; /* Adjust height for small screens */
+    }
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -40,16 +91,233 @@
 
     <!-- Centered Content -->
     <div class="content-container">
-        <h2>QUIZ CLOSED. FILL FEEDBACK FORM.</h2>
-
-        <!-- Instruction, Code, and Copy Button in one line      <div class="code-container"> <span>Enter code if asked:</span><pre id="auto-code">2653 2852</pre><button onclick="copyToClipboard()">Copy Code for Quiz</button></div> -->
-       
-        <!-- Buttons Section -->
-        <div class="button-container">
-            <button onclick="window.location.href='';">Quiz</button>
-            <button onclick="window.location.href='feedback.html';">Feedback Form</button>
+    <h2>VIEW LEADERBOARD</h2>
+    <!-- Leaderboard Section -->
+    <div class="leaderboard-container">
+        <!-- Embedded Tabs for Leaderboard -->
+        <div class="tabs">
+            <button class="tab-button" onclick="showLeaderboard('boys')">Boys</button>
+            <button class="tab-button" onclick="showLeaderboard('girls')">Girls</button>
         </div>
-    </div>
+
+        <!-- Boys' Leaderboard -->
+        <table id="boysLeaderboard">
+            <tr>
+                <th>Name</th>
+                <th>Department/Year</th>
+                <th>Points</th>
+                <th>Score</th>
+                <th>Attempts</th>
+            </tr>
+            <tr>
+                <td>Krishnaraj R</td>
+                <td>CSE/Not Specified</td>
+                <td>0/20</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Sridhar V</td>
+                <td>CSE/2</td>
+                <td>11/20</td>
+                <td>5800</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Mukilan J</td>
+                <td>Not Specified</td>
+                <td>1/20</td>
+                <td>980</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Sathya Seelan</td>
+                <td>Not Specified</td>
+                <td>0/20</td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+<tr>
+                <td>Ragul</td>
+                <td>Not Specified</td>
+                <td>4/20</td>
+                <td>3020</td>
+                <td>2</td>
+            </tr>
+<tr>
+                <td>Akash</td>
+                <td>CSE/2</td>
+                <td>0/20</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <!-- Girls' Leaderboard -->
+        <table id="girlsLeaderboard" style="display: none;">
+            <tr>
+                <th>Name</th>
+                <th>Department/Year</th>
+                <th>Points</th>
+                <th>Score</th>
+                <th>Attempts</th>
+            </tr>
+            <tr>
+                <td>Dhanya Lakshmi</td>
+                <td>Not Specified</td>
+                <td>10/20</td>
+                <td>8620</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Prithika</td>
+                <td>CSE/2</td>
+                <td>17/20</td>
+                <td>11890</td>
+                <td>2</td>
+            </tr>
+<tr>
+                <td>Poongodi</td>
+                <td>CSE/3</td>
+                <td>5/20</td>
+                <td>4080</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Karthika S</td>
+                <td>Not Specified</td>
+                <td>6/20</td>
+                <td>4100</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Uma</td>
+                <td>CSE/2</td>
+                <td>7/20</td>
+                <td>6170</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Anushma S</td>
+                <td>CSE/3</td>
+                <td>14/20</td>
+                <td>8900</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Gunasri M</td>
+                <td>Not Specified</td>
+                <td>14/20</td>
+                <td>8900</td>
+                <td>2</td>
+            </tr>
+<tr>
+                <td>Mohanashree C</td>
+                <td>Not Specified</td>
+                <td>14/20</td>
+                <td>10070</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Murugalakshmi</td>
+                <td>CSE/3</td>
+                <td>16/20</td>
+                <td>15660</td>
+                <td>3</td>
+            </tr>
+<tr>
+                <td>Janany N</td>
+                <td>CSE/3</td>
+                <td>18/20</td>
+                <td>16860</td>
+                <td>3</td>
+            </tr>
+<tr>
+                <td>Amirtha Varshni</td>
+                <td>CSE/3</td>
+                <td>10/20</td>
+                <td>7170</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Shivani</td>
+                <td>Not Specified</td>
+                <td>14/20</td>
+                <td>11730</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Hamsavarthiny</td>
+                <td>CSE/3</td>
+                <td>12/20</td>
+                <td>8040</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Asmath Fouziya M</td>
+                <td>Not Specified</td>
+                <td>15/20</td>
+                <td>10940</td>
+                <td>3</td>
+            </tr>
+<tr>
+                <td>Gladias Asin</td>
+                <td>Not Specified</td>
+                <td>18/20</td>
+                <td>14830</td>
+                <td>2</td>
+            </tr>
+<tr>
+                <td>Mahalakshmi J</td>
+                <td>AIML/2</td>
+                <td>0/20</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Jansi Rain</td>
+                <td>Not Specified</td>
+                <td>0/20</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Dharani</td>
+                <td>Not Specified</td>
+                <td>0/20</td>
+                <td>0</td>
+                <td>2</td>
+            </tr>
+<tr>
+                <td>Varsha V</td>
+                <td>Not Specified</td>
+                <td>4/20</td>
+                <td>3120</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Kokila Lakshmi</td>
+                <td>CSE/3</td>
+                <td>0/20</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Ragavi L</td>
+                <td>Not Specified</td>
+                <td>8/20</td>
+                <td>6670</td>
+                <td>1</td>
+            </tr>
+<tr>
+                <td>Punitha M</td>
+                <td>Not Specified</td>
+                <td>0/20</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </div></div>
 
     <!-- Footer -->
     <footer>
@@ -57,14 +325,11 @@
     </footer>
 
     <script>
-        function copyToClipboard() {
-            let codeText = document.getElementById("auto-code").innerText;
-            navigator.clipboard.writeText(codeText).then(() => {
-                alert("Code copied to clipboard!");
-            }).catch(err => {
-                console.error("Failed to copy: ", err);
-            });
+        function showLeaderboard(type) {
+            document.getElementById("boysLeaderboard").style.display = (type === 'boys') ? "table" : "none";
+            document.getElementById("girlsLeaderboard").style.display = (type === 'girls') ? "table" : "none";
         }
     </script>
+
 </body>
 </html>
